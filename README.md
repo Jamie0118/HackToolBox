@@ -1,12 +1,6 @@
 
 # HackToolBox v1.0
 
-**Author:** Jamie0118  
-**License:** MIT  
-**Version:** 1.0  
-
----
-
 ## Disclaimer
 
 **This tool is for educational and ethical testing purposes only.**  
@@ -50,7 +44,7 @@ HackToolBox is a terminal-based toolkit that simplifies the use of popular hacki
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourname/hacktoolbox.git
+   git clone https://github.com/Jamie0118/hacktoolbox.git
    cd hacktoolbox
    ```
 
