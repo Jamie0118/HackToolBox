@@ -4,7 +4,6 @@
 **Author:** Jamie0118  
 **License:** MIT  
 **Version:** 1.0  
-**Purpose:** Ethical hacking educational toolkit (Bash script)
 
 ---
 
