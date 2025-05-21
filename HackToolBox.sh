@@ -194,7 +194,7 @@ while true; do
                     echo "  - '192.168.1.10' is the target IP"
                     echo "  - 'ssh' tells Hydra to try SSH login"
                     echo ""
-                    echo "💡 Tip: Use good wordlists like rockyou.txt (found in Kali at /usr/share/wordlists/)"
+                    echo "Tip: Use good wordlists like rockyou.txt (found in Kali at /usr/share/wordlists/)"
                     ;;
                 2)
                     echo -n "Target IP: "
@@ -280,7 +280,7 @@ while true; do
                     echo "A port scan checks which ports on a target system are open or closed."
                     echo "Ports are like doors to services running on a machine (e.g., web server, FTP, SSH)."
                     echo ""
-                    echo "💡 Common Ports:"
+                    echo " Common Ports:"
                     echo "  21  = FTP"
                     echo "  22  = SSH"
                     echo "  23  = Telnet"
@@ -359,12 +359,12 @@ while true; do
                     echo "  tcpdump -i wlan0       # Capture packets on wlan0 (requires sudo)"
                     echo "  iwconfig               # Show wireless interface info"
                     echo ""
-                    echo "❗ Dangerous commands to AVOID:"
+                    echo "Dangerous commands to AVOID:"
                     echo "  rm -rf /               # Deletes all files on root filesystem!"
                     echo "  :(){ :|:& };:          # Fork bomb that crashes the system"
                     echo "  dd if=/dev/zero of=/dev/sda # Overwrites your hard drive"
                     echo ""
-                    echo "💡 Always double-check your input before confirming."
+                    echo " Always double-check your input before confirming."
                     ;;
 
                 2)
