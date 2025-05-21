@@ -92,7 +92,7 @@ while true; do
                     else
                         read -p "Enter target BSSID: " bssid
                         read -p "Enter channel: " channel
-                        read -p "Capture filename (e.g., handshake): " capfile
+                        read -p "Capture filename needs to be can't be same name as existing file (e.g., handshake): " capfile
                         sudo airodump-ng --bssid $bssid -c $channel -w $capfile $mon_adapter
                     fi
                     ;;
@@ -122,7 +122,7 @@ while true; do
 
         scan)
             echo -e "${CYAN}[Network Scanning with Nmap]${NC}"
-            echo "1. What does this do? (uitleg)"
+            echo "1. What does this do? (explanation)"
             echo "2. Start a scan"
             read -p "Choose an option (1-2): " scan_choice
 
@@ -219,7 +219,7 @@ while true; do
         macspoof)
             echo -e "${CYAN}[MAC Address Spoofing]${NC}"
 
-            echo "📡 Available Network Interfaces:"
+            echo "Available Network Interfaces:"
             interfaces=($(ip link show | awk -F: '$0 !~ "lo|vir|docker|^[^0-9]"{print $2}' | tr -d ' '))
             for i in "${!interfaces[@]}"; do
                 echo "$((i+1)). ${interfaces[$i]}"
@@ -401,8 +401,8 @@ sniff)
             echo " This starts capturing packets on the specified interface."
             echo " Press CTRL+C to stop."
             echo ""
-            echo "Tip: Use 'ip a' or 'ifconfig' to see your network interfaces." [9, 13]
-            echo " Capturing often requires root privileges, so 'sudo' is needed." [10]
+            echo "Tip: Use 'ip a' or 'ifconfig' to see your network interfaces."
+            echo " Capturing often requires root privileges, so 'sudo' is needed."
             ;;
         2)
             echo -e "${CYAN}Available Network Interfaces:${NC}"
@@ -452,20 +452,20 @@ netinfo)
             echo "They are useful for seeing what services are running on your system"
             echo "and which connections are active or listening for traffic."
             echo ""
-            echo "'netstat' is an older tool, while 'ss' is newer and often faster." [9]
+            echo "'netstat' is an older tool, while 'ss' is newer and often faster."
             echo ""
             echo "Common Options Used (as examples in 'custom'):"
-            echo " netstat -tuln # List TCP/UDP ports that are LISTENing, numeric form" [9]
-            echo " ss -tuln # Same for ss" [9]
+            echo " netstat -tuln # List TCP/UDP ports that are LISTENing, numeric form"
+            echo " ss -tuln # Same for ss"
             echo " netstat -a # List ALL connections and listening ports"
             echo " ss -a # Same for ss"
             ;;
         2)
             echo -e "${GREEN}Listing listening ports (TCP/UDP)...${NC}"
             if command -v ss &>/dev/null; then
-                ss -tuln [9]
+                ss -tuln
             else
-                netstat -tuln [9]
+                netstat -tuln
             fi
             ;;
         3)
@@ -477,7 +477,7 @@ netinfo)
              fi
             ;;
         *)
-            echo -e "${RED}Invalid selection.${NC}" [5-8, 11, 12]
+            echo -e "${RED}Invalid selection.${NC}" [1-3]
             ;;
     esac
     ;;
@@ -486,15 +486,15 @@ netinfo)
 
 help)
     echo "Available commands:"
-    echo " wifi - WiFi hacking interactive menu" [11]
-    echo " scan - Scan networks with Nmap" [11]
-    echo " brute - Brute force with Hydra" [11]
-    echo " macspoof - Change your MAC address" [11]
-    echo " portscan - Quick TCP port scan" [11]
-    echo " custom - Run a custom command" [11]
+    echo " wifi - WiFi hacking interactive menu"
+    echo " scan - Scan networks with Nmap"
+    echo " brute - Brute force with Hydra"
+    echo " macspoof - Change your MAC address"
+    echo " portscan - Quick TCP port scan"
+    echo " custom - Run a custom command"
     echo " sniff - Basic packet sniffer (tcpdump)"
     echo " netinfo - View network connections and listening ports (netstat/ss)"
-    echo " exit - Exit the toolbox" [11]
+    echo " exit - Exit the toolbox"
     ;;
 
         exit)
